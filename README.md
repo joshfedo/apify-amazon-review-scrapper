@@ -1,1 +1,4 @@
-# apify-amazon-review-scrapper-
+# apify-amazon-review-scrapper
+
+
+Import the json file to your apify account and start scrapping. 
