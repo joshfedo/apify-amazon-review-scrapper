@@ -1,0 +1,83 @@
+{
+  "_id": "BsjJYsKyN8tHyEE2R",
+  "clickableElementsSelector": ".a-last a",
+  "pageFunction": "function pageFunction(context) {\n    // called on every page the crawler visits, use it to extract data from it\n    var $ = context.jQuery;\n    var log = null\n    var reviews = []\n    $('div[data-hook=\"review\"]').each(function(){    \n      const reviewData ={ \n      'title' : $(this).find('a[data-hook=\"review-title\"]').text(),\n      'date' : $(this).find('span[data-hook=\"review-date\"]').text(),\n      'reviewBody' : $(this).find('div[data-hook=\"review-body\"]').text(),\n      'rating': $(this).find('i[data-hook=\"review-star-rating\"]').find('span').text()\n       }\n       reviews.push(reviewData)\n    })   \n    return reviews;\n}",
+  "interceptRequest": "function interceptRequest(context, newRequest) {\n    // called whenever the crawler finds a link to a new page,\n    // use it to override default behavior\n    return newRequest;\n}",
+  "loadImages": true,
+  "loadCss": true,
+  "injectJQuery": true,
+  "ignoreRobotsTxt": true,
+  "cookiesPersistence": "PER_PROCESS",
+  "proxyType": "NONE",
+  "ownerUserId": "D28QzQudsgoxqwDb2",
+  "customId": "Amazon Review Scrapper",
+  "createdAt": "2019-02-05T15:40:39.246Z",
+  "modifiedAt": "2019-02-05T17:29:06.291Z",
+  "comments": null,
+  "crawlPurls": [
+    {
+      "key": "",
+      "value": "https://www.amazon.com/product-reviews/B0006MZOBC/[.*\\?pageNumber.*]"
+    }
+  ],
+  "startUrls": [
+    {
+      "key": "",
+      "value": "https://www.amazon.com/product-reviews/B0006MZOBC/?pageNumber=1"
+    }
+  ],
+  "testUrl": {
+    "key": "",
+    "value": "https://www.amazon.com/product-reviews/B0006MZOBC/?pageNumber=1"
+  },
+  "considerUrlFragment": false,
+  "customData": null,
+  "customHttpHeaders": null,
+  "customProxies": null,
+  "disableWebSecurity": false,
+  "finishWebhookData": null,
+  "finishWebhookUrl": null,
+  "injectUnderscoreJs": false,
+  "maxCrawlDepth": null,
+  "maxCrawledPages": null,
+  "maxCrawledPagesPerSlave": null,
+  "maxInfiniteScrollHeight": null,
+  "maxOutputPages": null,
+  "maxParallelRequests": 1,
+  "pageFunctionTimeout": null,
+  "pageLoadTimeout": null,
+  "proxyGroups": [],
+  "randomWaitBetweenRequests": null,
+  "resourceTimeout": null,
+  "rotateUserAgents": true,
+  "skipLoadingFrames": false,
+  "timeout": null,
+  "verboseLog": false,
+  "public": {
+    "categories": [
+      "ECOMMERCE"
+    ],
+    "description": "Scrape reviews off amazon.com",
+    "domain": "Amazon.com",
+    "isAnonymous": false,
+    "isDeprecated": false,
+    "isPublic": true,
+    "publishedAt": "2019-02-05T17:29:14.170Z",
+    "username": "joshfedo",
+    "userPictureUrl": "https://cdn.apify.com/img/anonymous_user_picture.png"
+  },
+  "executeUrl": "https://api.apify.com/v1/D28QzQudsgoxqwDb2/crawlers/BsjJYsKyN8tHyEE2R/execute?token=6KxbRyiA2mfN3Te2N4gPWZ5Yz",
+  "lastExecution": {
+    "_id": "M4xsY2WKTGG5qDmdY",
+    "startedAt": "2019-02-05T17:05:43.653Z",
+    "finishedAt": "2019-02-05T17:05:51.193Z",
+    "status": "SUCCEEDED",
+    "pagesCrawled": 3,
+    "detailsUrl": "https://api.apify.com/v1/execs/M4xsY2WKTGG5qDmdY",
+    "resultsUrl": "https://api.apify.com/v1/execs/M4xsY2WKTGG5qDmdY/results"
+  },
+  "settingsUrl": "https://api.apify.com/v1/D28QzQudsgoxqwDb2/crawlers/BsjJYsKyN8tHyEE2R?token=htWZNLb3BvqmWCPGaracaCiss",
+  "executionsListUrl": "https://api.apify.com/v1/D28QzQudsgoxqwDb2/crawlers/BsjJYsKyN8tHyEE2R/execs?token=KD4ABydqcmpyuYkYMPGEpBWB4",
+  "lastExecutionFixedDetailsUrl": "https://api.apify.com/v1/D28QzQudsgoxqwDb2/crawlers/BsjJYsKyN8tHyEE2R/lastExec?token=KD4ABydqcmpyuYkYMPGEpBWB4",
+  "lastExecutionFixedResultsUrl": "https://api.apify.com/v1/D28QzQudsgoxqwDb2/crawlers/BsjJYsKyN8tHyEE2R/lastExec/results?token=KD4ABydqcmpyuYkYMPGEpBWB4"
+}
